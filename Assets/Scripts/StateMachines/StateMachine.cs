@@ -14,7 +14,7 @@ public abstract class StateMachine : MonoBehaviour
 
     public void SwitchState(State newState)
     {
-        if currentState != newState
+        if (currentState != newState)
         {
             currentState?.Exit();
 
