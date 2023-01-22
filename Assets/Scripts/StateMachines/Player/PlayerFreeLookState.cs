@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
 {
+    // ==================== String to Hash ====================
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
 
+
+    // ==================== State Variables ====================
     private const float AnimatorDampTime = 0.1f;
 
+
+    // ==================== Constructor/Base Methods ====================
     public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
+        stateMachine.InputReader.TargetEvent += OnTarget;
     }
 
     public override void Tick(float deltaTime)
@@ -32,8 +38,11 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Exit()
     {
+        stateMachine.InputReader.TargetEvent -= OnTarget;
     }
 
+
+    // ==================== Current State Methods ====================
     private Vector3 CalculateMovement()
     {
         Vector3 forward = stateMachine.MainCameraTransform.forward;
@@ -55,5 +64,12 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.transform.rotation,
             Quaternion.LookRotation(movement),
             deltaTime * stateMachine.RotationDamping);
+    }
+
+
+    // ==================== Switch State Methods ====================
+    private void OnTarget()
+    {
+        stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
     }
 }
