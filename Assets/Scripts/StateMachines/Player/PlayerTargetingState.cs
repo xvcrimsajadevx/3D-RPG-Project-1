@@ -15,6 +15,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        Debug.Log(stateMachine.Targeter.CurrentTarget.name);
     }
 
     public override void Exit()
@@ -24,8 +25,8 @@ public class PlayerTargetingState : PlayerBaseState
 
     private void OnTargetPressed()
     {
+        stateMachine.Targeter.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-        Debug.Log("Entering Free Look State");
     }
     
 }
