@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class PlayerTargetingState : PlayerBaseState
 {
+    // ==================== String to Hash ====================
+    private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
+
+    // ==================== Constructor/Base Methods ====================
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
 
     public override void Enter()
     {
+        stateMachine.Animator.Play(TargetingBlendTreeHash);
         stateMachine.InputReader.TargetEvent += OnTargetPressed;
     }
 

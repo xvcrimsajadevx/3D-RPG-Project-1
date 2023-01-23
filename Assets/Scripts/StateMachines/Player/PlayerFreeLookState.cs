@@ -6,6 +6,7 @@ public class PlayerFreeLookState : PlayerBaseState
 {
     // ==================== String to Hash ====================
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
+    private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
 
 
     // ==================== State Variables ====================
@@ -17,6 +18,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
     public override void Enter()
     {
+        stateMachine.Animator.Play(FreeLookBlendTreeHash);
         stateMachine.InputReader.TargetEvent += OnTarget;
     }
 
