@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class PlayerAttackingState : PlayerBaseState
 {
-    private bool attackButtonPressed = false;
+    // ==================== State Variables ====================
+    private bool attackButtonPressed;
+    private bool forceApplied;
     private float previousFrameTime;
     private Attack attack;
 
+
+    // ==================== Constructor/Base Methods ====================
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
         attack = stateMachine.Attacks[attackIndex];
@@ -29,18 +33,30 @@ public class PlayerAttackingState : PlayerBaseState
 
         float normalizedTime = GetNormalizedTime();
 
-        if (normalizedTime > previousFrameTime && normalizedTime < 1f)
+        if (normalizedTime < 1f)
         {
+            if (normalizedTime >= attack.ForceTime)
+            {
+                TryApplyForce();
+            }
+
             if (attackButtonPressed)
             {
                 TryComboAttack(normalizedTime);
 
                 attackButtonPressed = false;
-            }
+            }            
         }
         else
         {
-            // Go back to locomotion
+            if (stateMachine.Targeter.CurrentTarget != null)
+            {
+                stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+            }
+            else
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            }
         }
 
         previousFrameTime = normalizedTime;
@@ -49,6 +65,15 @@ public class PlayerAttackingState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.AttackEvent -= OnAttackButtonPressed;
+    }
+
+
+    // ==================== Attack State Methods ====================
+    private void OnAttackButtonPressed()
+    {
+        if (attackButtonPressed) { return; }
+
+        attackButtonPressed = true;
     }
 
     private void TryComboAttack(float normalizedTime)
@@ -64,6 +89,15 @@ public class PlayerAttackingState : PlayerBaseState
                 attack.ComboStateIndex
             )
         );
+    }
+
+    private void TryApplyForce()
+    {
+        if (forceApplied) { return; }
+
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force);
+
+        forceApplied = true;
     }
 
     private float GetNormalizedTime()
@@ -85,12 +119,8 @@ public class PlayerAttackingState : PlayerBaseState
         }
     }
 
-    private void OnAttackButtonPressed()
-    {
-        if (!attackButtonPressed)
-        {
-            attackButtonPressed = true;
-        }
-    }
+
+    // ==================== Switch State Methods ====================
+    
 
 }
