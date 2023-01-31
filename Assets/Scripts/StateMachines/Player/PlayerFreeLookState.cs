@@ -44,7 +44,7 @@ public class PlayerFreeLookState : PlayerBaseState
     }
 
 
-    // ==================== Current State Methods ====================
+    // ==================== Movement Methods ====================
     private Vector3 CalculateMovement()
     {
         Vector3 forward = stateMachine.MainCameraTransform.forward;
