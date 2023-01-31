@@ -80,6 +80,6 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnAttack()
     {
-        stateMachine.SwitchState(new PlayerAttackingState(stateMachine));
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
     }
 }

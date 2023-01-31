@@ -566,7 +566,12 @@ MonoBehaviour:
   <Targeter>k__BackingField: {fileID: 9163506514393782811}
   <ForceReceiver>k__BackingField: {fileID: 6716683936469422091}
   <FreeLookMovementSpeed>k__BackingField: 4
+  <TargetingMovementSpeed>k__BackingField: 0
   <RotationDamping>k__BackingField: 12
+  <Attacks>k__BackingField:
+  - <AnimationName>k__BackingField: attack1
+  - <AnimationName>k__BackingField: attack2
+  - <AnimationName>k__BackingField: attack3
 --- !u!114 &5407610622297118115
 MonoBehaviour:
   m_ObjectHideFlags: 0
