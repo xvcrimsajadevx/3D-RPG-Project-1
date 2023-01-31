@@ -6,6 +6,9 @@ public class PlayerTargetingState : PlayerBaseState
 {
     // ==================== String to Hash ====================
     private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
+    private readonly int TargetingForwardHash = Animator.StringToHash("TargetingForward");
+    private readonly int TargetingRightHash = Animator.StringToHash("TargetingRight");
+
 
     // ==================== Constructor/Base Methods ====================
     public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
@@ -27,8 +30,10 @@ public class PlayerTargetingState : PlayerBaseState
         }
 
         Vector3 movement = CalculateMovement();
-        
+
         Move(movement * stateMachine.TargetingMovementSpeed, deltaTime);
+
+        UpdateAnimator(deltaTime);
 
         FaceTarget();
     }
@@ -38,13 +43,8 @@ public class PlayerTargetingState : PlayerBaseState
         stateMachine.InputReader.TargetEvent += OnTargetPressed;
     }
 
-    // ==================== Switch State Methods ====================
-    private void OnTargetPressed()
-    {
-        stateMachine.Targeter.Cancel();
-        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-    }
-    
+
+    // ==================== Movement Methods ====================
     private Vector3 CalculateMovement()
     {
         Vector3 movement = new Vector3();
@@ -53,5 +53,34 @@ public class PlayerTargetingState : PlayerBaseState
         movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
 
         return movement;
+    }
+
+    private void UpdateAnimator(float deltaTime)
+    {
+        if (stateMachine.InputReader.MovementValue.y == 0)
+        {
+            stateMachine.Animator.SetFloat(TargetingForwardHash, 0, 0.1f, deltaTime);
+        }
+        else {
+            float value = stateMachine.InputReader.MovementValue.y; //> 0 ? 1F : -1F;
+            stateMachine.Animator.SetFloat(TargetingForwardHash, value, 0.1f, deltaTime);
+        }
+
+        if (stateMachine.InputReader.MovementValue.x == 0)
+        {
+            stateMachine.Animator.SetFloat(TargetingRightHash, 0, 0.1f, deltaTime);
+        }
+        else {
+            float value = stateMachine.InputReader.MovementValue.x; //> 0 ? 1F : -1F;
+            stateMachine.Animator.SetFloat(TargetingRightHash, value, 0.1f, deltaTime);
+        }
+    }
+
+
+    // ==================== Switch State Methods ====================
+    private void OnTargetPressed()
+    {
+        stateMachine.Targeter.Cancel();
+        stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 }
