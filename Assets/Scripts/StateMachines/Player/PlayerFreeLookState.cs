@@ -20,6 +20,7 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         stateMachine.Animator.Play(FreeLookBlendTreeHash);
         stateMachine.InputReader.TargetEvent += OnTarget;
+        stateMachine.InputReader.AttackEvent += OnAttack;
     }
 
     public override void Tick(float deltaTime)
@@ -41,6 +42,7 @@ public class PlayerFreeLookState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
+        stateMachine.InputReader.AttackEvent -= OnAttack;
     }
 
 
@@ -74,5 +76,10 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         if (!stateMachine.Targeter.SelectTarget()) { return; }
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+    }
+
+    private void OnAttack()
+    {
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine));
     }
 }
