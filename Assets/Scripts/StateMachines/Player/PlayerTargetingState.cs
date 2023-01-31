@@ -19,6 +19,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.Animator.Play(TargetingBlendTreeHash);
         stateMachine.InputReader.TargetEvent += OnTargetPressed;
+        stateMachine.InputReader.AttackEvent += OnAttack;
     }
 
     public override void Tick(float deltaTime)
@@ -40,7 +41,8 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.InputReader.TargetEvent += OnTargetPressed;
+        stateMachine.InputReader.TargetEvent -= OnTargetPressed;
+        stateMachine.InputReader.AttackEvent -= OnAttack;
     }
 
 
@@ -82,5 +84,10 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.Targeter.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+    }
+
+    private void OnAttack()
+    {
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine));
     }
 }
