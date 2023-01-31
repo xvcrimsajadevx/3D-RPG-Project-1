@@ -62,7 +62,7 @@ public class PlayerTargetingState : PlayerBaseState
             stateMachine.Animator.SetFloat(TargetingForwardHash, 0, 0.1f, deltaTime);
         }
         else {
-            float value = stateMachine.InputReader.MovementValue.y; //> 0 ? 1F : -1F;
+            float value = stateMachine.InputReader.MovementValue.y;
             stateMachine.Animator.SetFloat(TargetingForwardHash, value, 0.1f, deltaTime);
         }
 
@@ -71,7 +71,7 @@ public class PlayerTargetingState : PlayerBaseState
             stateMachine.Animator.SetFloat(TargetingRightHash, 0, 0.1f, deltaTime);
         }
         else {
-            float value = stateMachine.InputReader.MovementValue.x; //> 0 ? 1F : -1F;
+            float value = stateMachine.InputReader.MovementValue.x;
             stateMachine.Animator.SetFloat(TargetingRightHash, value, 0.1f, deltaTime);
         }
     }
