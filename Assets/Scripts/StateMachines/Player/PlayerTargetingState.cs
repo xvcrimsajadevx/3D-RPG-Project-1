@@ -17,9 +17,11 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.Play(TargetingBlendTreeHash);
+        
         stateMachine.InputReader.TargetEvent += OnTargetPressed;
         stateMachine.InputReader.AttackEvent += OnAttack;
+
+        stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, 0.1f);
     }
 
     public override void Tick(float deltaTime)
