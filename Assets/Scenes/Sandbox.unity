@@ -672,6 +672,7 @@ GameObject:
   - component: {fileID: 1100604479}
   - component: {fileID: 1100604478}
   - component: {fileID: 1100604482}
+  - component: {fileID: 1100604483}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -777,6 +778,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fccac0471cbd1b4f9d631b70f822bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1100604483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100604477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3f685963a3b1f4f882826778616ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
 --- !u!1001 &1250793032
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1247,6 +1261,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2677883761631726058, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677883761631726058, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677883761631726058, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677883761631726058, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.9694842
       objectReference: {fileID: 0}
@@ -1320,11 +1346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5106838518184654282, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008465139
+      value: -0.000000008465139
       objectReference: {fileID: 0}
     - target: {fileID: 5106838518184654282, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000015350228
+      value: 0.0000000015350228
       objectReference: {fileID: 0}
     - target: {fileID: 6908375937402024495, guid: 4de140fbf3e171341912f7022bce9eca, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1439,6 +1465,7 @@ GameObject:
   - component: {fileID: 2029175808}
   - component: {fileID: 2029175807}
   - component: {fileID: 2029175811}
+  - component: {fileID: 2029175812}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1544,6 +1571,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fccac0471cbd1b4f9d631b70f822bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2029175812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029175806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a3f685963a3b1f4f882826778616ac9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 30
 --- !u!1001 &2060893654
 PrefabInstance:
   m_ObjectHideFlags: 0
