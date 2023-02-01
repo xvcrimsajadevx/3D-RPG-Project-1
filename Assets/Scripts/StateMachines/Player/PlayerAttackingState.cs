@@ -22,6 +22,8 @@ public class PlayerAttackingState : PlayerBaseState
     {
         stateMachine.InputReader.AttackEvent += OnAttackButtonPressed;
 
+        stateMachine.Weapon.SetAttack(attack.Damage);
+
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
     }
 

@@ -567,6 +567,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 2185911024537127020}
   <Targeter>k__BackingField: {fileID: 9163506514393782811}
   <ForceReceiver>k__BackingField: {fileID: 6716683936469422091}
+  <Weapon>k__BackingField: {fileID: 1965134391103283162}
   <FreeLookMovementSpeed>k__BackingField: 4
   <TargetingMovementSpeed>k__BackingField: 3
   <RotationDamping>k__BackingField: 12
@@ -577,18 +578,21 @@ MonoBehaviour:
     <ComboAttackTime>k__BackingField: 0.6
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 15
+    <Damage>k__BackingField: 10
   - <AnimationName>k__BackingField: attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 15
+    <Damage>k__BackingField: 15
   - <AnimationName>k__BackingField: attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 20
+    <Damage>k__BackingField: 20
 --- !u!114 &5407610622297118115
 MonoBehaviour:
   m_ObjectHideFlags: 0
