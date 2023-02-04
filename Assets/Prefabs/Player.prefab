@@ -586,21 +586,21 @@ MonoBehaviour:
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
-    <WindingTime>k__BackingField: 0
+    <WindingTime>k__BackingField: 0.2
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 15
-    <WindingDrag>k__BackingField: 0
-    <Drag>k__BackingField: 0
+    <WindingDrag>k__BackingField: 0.008
+    <Drag>k__BackingField: 0.06
     <Damage>k__BackingField: 15
   - <AnimationName>k__BackingField: attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0
-    <WindingTime>k__BackingField: 0
+    <WindingTime>k__BackingField: 0.1
     <ForceTime>k__BackingField: 0.35
     <Force>k__BackingField: 20
-    <WindingDrag>k__BackingField: 0
-    <Drag>k__BackingField: 0
+    <WindingDrag>k__BackingField: 0.008
+    <Drag>k__BackingField: 0.03
     <Damage>k__BackingField: 20
 --- !u!114 &5407610622297118115
 MonoBehaviour:

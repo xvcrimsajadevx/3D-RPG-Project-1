@@ -27,8 +27,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848001713652406174}
-  m_LocalRotation: {x: 0.042508505, y: -0.50484055, z: 0.024901228, w: 0.86180574}
-  m_LocalPosition: {x: -19.785912, y: 8.035633, z: -3.3150368}
+  m_LocalRotation: {x: 0.26274773, y: -0.000033055763, z: 0.0000090016, w: 0.9648646}
+  m_LocalPosition: {x: 4.6655912, y: 9.3098755, z: -12.583197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,7 +196,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2198056122281428149}
   m_LocalRotation: {x: -3.0092655e-36, y: -1e-45, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: -2.8e-44, y: 2.8e-44, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -246,7 +246,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2677883760281499972}
-  m_LocalRotation: {x: -0.009719522, y: 0.9476375, z: 0.028974853, w: 0.31788254}
+  m_LocalRotation: {x: 0.26274773, y: -0.00003318198, z: 0.00000903597, w: 0.9648646}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -327,7 +327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2677883760755391253}
   m_LocalRotation: {x: -0.000000029802319, y: 0.00000006800837, z: -9.094946e-13, w: 1}
-  m_LocalPosition: {x: 1.6525908, y: 6.059876, z: -3.5929794}
+  m_LocalPosition: {x: 4.6655912, y: 9.3098755, z: -12.583197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -376,7 +376,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0
+    Value: 1
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -400,7 +400,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 142.94365
+    Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -546,7 +546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -0.75, z: -5}
+  m_FollowOffset: {x: 0, y: 2.5, z: -5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -566,7 +566,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 142.94365
+    Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -0.75, z: -5}
+  m_FollowOffset: {x: 0, y: 2.5, z: -5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -726,7 +726,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 142.94365
+    Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: -0.75, z: -5}
+  m_FollowOffset: {x: 0, y: 2.5, z: -5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -853,7 +853,7 @@ MonoBehaviour:
     m_LegacyHeadingDefinition: -1
     m_LegacyVelocityFilterStrength: -1
   m_XAxis:
-    Value: 142.94365
+    Value: 0
     m_SpeedMode: 0
     m_MaxSpeed: 300
     m_AccelTime: 0.1
@@ -925,7 +925,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2677883761631726060}
-  m_LocalRotation: {x: -0.015500029, y: 0.94695365, z: 0.046207093, w: 0.3176531}
+  m_LocalRotation: {x: 0.2451539, y: -0.00003329224, z: 0.000008418621, w: 0.9694842}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1003,7 +1003,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2677883761695594043}
-  m_LocalRotation: {x: -0.021260174, y: 0.9459595, z: 0.06337861, w: 0.3173197}
+  m_LocalRotation: {x: 0.22752568, y: -0.000033468463, z: 0.0000078200355, w: 0.9737721}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1081,7 +1081,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5588707640260279231}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 1e-45, y: 1e-45, z: -0, w: 1}
   m_LocalPosition: {x: 4.6655912, y: 6.809876, z: -17.583197}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1382,34 +1382,6 @@ PrefabInstance:
     - target: {fileID: 2136900576813316287, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407610622297118116, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[1].<Drag>k__BackingField
-      value: 0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407610622297118116, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[2].<Drag>k__BackingField
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407610622297118116, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[1].<WindingDrag>k__BackingField
-      value: 0.008
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407610622297118116, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[1].<WindingTime>k__BackingField
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407610622297118116, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[2].<WindingDrag>k__BackingField
-      value: 0.008
-      objectReference: {fileID: 0}
-    - target: {fileID: 5407610622297118116, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: <Attacks>k__BackingField.Array.data[2].<WindingTime>k__BackingField
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6716683936469422091, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
-      propertyPath: drag
-      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 9163506514393782811, guid: 1c3515837ff0ba04ebf40551374e4a09, type: 3}
       propertyPath: cineTargetGroup
