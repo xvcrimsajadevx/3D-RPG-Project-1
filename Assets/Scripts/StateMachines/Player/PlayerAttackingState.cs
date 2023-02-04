@@ -8,6 +8,7 @@ public class PlayerAttackingState : PlayerBaseState
     // ==================== State Variables ====================
     private bool attackButtonPressed;
     private bool forceApplied;
+    private bool windingApplied;
     private float previousFrameTime;
     private Attack attack;
 
@@ -37,7 +38,11 @@ public class PlayerAttackingState : PlayerBaseState
 
         if (normalizedTime < 1f)
         {
-            if (normalizedTime >= attack.ForceTime)
+            if (normalizedTime >= attack.WindingTime && normalizedTime <= attack.ForceTime)
+            {
+                TryApplyWinding();
+            }
+            else if (normalizedTime >= attack.ForceTime)
             {
                 TryApplyForce();
             }
@@ -93,11 +98,20 @@ public class PlayerAttackingState : PlayerBaseState
         );
     }
 
+    private void TryApplyWinding()
+    {
+        if (windingApplied) { return; }
+
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * 15, attack.WindingDrag);
+
+        forceApplied = true;
+    }
+
     private void TryApplyForce()
     {
         if (forceApplied) { return; }
 
-        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force);
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force, attack.Drag);
 
         forceApplied = true;
     }
