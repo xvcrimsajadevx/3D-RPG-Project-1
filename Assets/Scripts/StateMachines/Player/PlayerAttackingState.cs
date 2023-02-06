@@ -11,6 +11,7 @@ public class PlayerAttackingState : PlayerBaseState
     private bool windingApplied;
     private float previousFrameTime;
     private Attack attack;
+    private Vector3 movement;
 
 
     // ==================== Constructor/Base Methods ====================
@@ -23,6 +24,8 @@ public class PlayerAttackingState : PlayerBaseState
     {
         stateMachine.InputReader.AttackEvent += OnAttackButtonPressed;
 
+        movement = CalculateMovement();
+
         stateMachine.Weapon.SetAttack(attack.Damage);
 
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
@@ -31,6 +34,11 @@ public class PlayerAttackingState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
         Move(deltaTime);
+        
+        if (movement != Vector3.zero)
+        {
+            FaceMovementDirection(movement, deltaTime);
+        }
 
         FaceTarget();
 

@@ -48,28 +48,7 @@ public class PlayerFreeLookState : PlayerBaseState
 
 
     // ==================== Movement Methods ====================
-    private Vector3 CalculateMovement()
-    {
-        Vector3 forward = stateMachine.MainCameraTransform.forward;
-        Vector3 right = stateMachine.MainCameraTransform.right;
-
-        forward.y = 0f;
-        right.y = 0f;
-
-        forward.Normalize();
-        right.Normalize();
-
-        return forward * stateMachine.InputReader.MovementValue.y +
-            right * stateMachine.InputReader.MovementValue.x;
-    }
-
-    private void FaceMovementDirection(Vector3 movement, float deltaTime)
-    {
-        stateMachine.transform.rotation = Quaternion.Lerp(
-            stateMachine.transform.rotation,
-            Quaternion.LookRotation(movement),
-            deltaTime * stateMachine.RotationDamping);
-    }
+    
 
 
     // ==================== Switch State Methods ====================
