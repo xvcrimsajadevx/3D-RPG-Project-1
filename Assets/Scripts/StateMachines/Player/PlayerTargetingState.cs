@@ -32,7 +32,7 @@ public class PlayerTargetingState : PlayerBaseState
             return;
         }
 
-        Vector3 movement = CalculateMovement();
+        Vector3 movement = CalculateTargetMovement();
 
         Move(movement * stateMachine.TargetingMovementSpeed, deltaTime);
 
@@ -49,7 +49,7 @@ public class PlayerTargetingState : PlayerBaseState
 
 
     // ==================== Movement Methods ====================
-    private Vector3 CalculateMovement()
+    private Vector3 CalculateTargetMovement()
     {
         Vector3 movement = new Vector3();
 
