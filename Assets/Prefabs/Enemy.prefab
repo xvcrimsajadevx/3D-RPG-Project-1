@@ -1218,7 +1218,7 @@ Transform:
   - {fileID: 2139816182165467150}
   - {fileID: 9172269927409742774}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7657663001071821791
 MonoBehaviour:
@@ -1238,6 +1238,7 @@ MonoBehaviour:
   <Agent>k__BackingField: {fileID: 1396096167135741303}
   <MovementSpeed>k__BackingField: 3
   <PlayerChaseRange>k__BackingField: 10
+  <AttackRange>k__BackingField: 1
 --- !u!143 &1800243352115461159
 CharacterController:
   m_ObjectHideFlags: 0
