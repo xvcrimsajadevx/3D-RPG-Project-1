@@ -19,19 +19,19 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
-
         if (!IsInChaseRange())
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
             return;
         }
-        else if (IsInAttackRange())
+
+        FacePlayer();
+        
+        if (IsInAttackRange())
         {
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
             return;
         }
-
-        FacePlayer();
 
         MoveToPlayer(deltaTime);
 
