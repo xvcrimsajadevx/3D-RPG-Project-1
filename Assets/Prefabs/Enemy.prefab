@@ -1228,6 +1228,7 @@ GameObject:
   - component: {fileID: 2524959728388405750}
   - component: {fileID: 3337531023105875119}
   - component: {fileID: 1396096167135741303}
+  - component: {fileID: 7018900551467243794}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1273,8 +1274,9 @@ MonoBehaviour:
   <Weapon>k__BackingField: {fileID: 8192221361873677972}
   <MovementSpeed>k__BackingField: 3
   <PlayerChaseRange>k__BackingField: 10
-  <AttackRange>k__BackingField: 2
+  <AttackRange>k__BackingField: 1.5
   <AttackDamage>k__BackingField: 20
+  <AttackKnockback>k__BackingField: 10
 --- !u!143 &1800243352115461159
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1359,6 +1361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1800243352115461159}
+  agent: {fileID: 1396096167135741303}
 --- !u!195 &1396096167135741303
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1381,6 +1384,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7018900551467243794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585942830914219563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6425ffed5a7da7a46a9dda73dadbe938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLogic: {fileID: 7879539538729846582}
 --- !u!1 &3796547980877347376
 GameObject:
   m_ObjectHideFlags: 0
