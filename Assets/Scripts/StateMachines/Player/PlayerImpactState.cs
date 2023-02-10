@@ -8,7 +8,7 @@ public class PlayerImpactState : PlayerBaseState
 
     private float CrossFadeDuration = 0.1f;
 
-    private float duration = 1f;
+    private float duration = 0.8f;
 
     public PlayerImpactState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
