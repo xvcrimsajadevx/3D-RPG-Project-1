@@ -1272,11 +1272,12 @@ MonoBehaviour:
   <ForceReceiver>k__BackingField: {fileID: 3337531023105875119}
   <Agent>k__BackingField: {fileID: 1396096167135741303}
   <Weapon>k__BackingField: {fileID: 8192221361873677972}
+  <Health>k__BackingField: {fileID: 5164898727212189723}
   <MovementSpeed>k__BackingField: 3
   <PlayerChaseRange>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5
   <AttackDamage>k__BackingField: 20
-  <AttackKnockback>k__BackingField: 10
+  <AttackKnockback>k__BackingField: 5
 --- !u!143 &1800243352115461159
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1362,6 +1363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1800243352115461159}
   agent: {fileID: 1396096167135741303}
+  drag: 0.2
 --- !u!195 &1396096167135741303
 NavMeshAgent:
   m_ObjectHideFlags: 0

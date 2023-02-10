@@ -568,6 +568,7 @@ MonoBehaviour:
   <Targeter>k__BackingField: {fileID: 9163506514393782811}
   <ForceReceiver>k__BackingField: {fileID: 6716683936469422091}
   <Weapon>k__BackingField: {fileID: 1965134391103283162}
+  <Health>k__BackingField: {fileID: 1413961201906063500}
   <FreeLookMovementSpeed>k__BackingField: 5
   <TargetingMovementSpeed>k__BackingField: 4
   <RotationDamping>k__BackingField: 12
@@ -582,7 +583,7 @@ MonoBehaviour:
     <WindingDrag>k__BackingField: 0.005
     <Drag>k__BackingField: 0.02
     <Damage>k__BackingField: 10
-    <Knockback>k__BackingField: 15
+    <Knockback>k__BackingField: 5
   - <AnimationName>k__BackingField: attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
@@ -593,7 +594,7 @@ MonoBehaviour:
     <WindingDrag>k__BackingField: 0.008
     <Drag>k__BackingField: 0.06
     <Damage>k__BackingField: 15
-    <Knockback>k__BackingField: 20
+    <Knockback>k__BackingField: 8
   - <AnimationName>k__BackingField: attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
@@ -604,7 +605,7 @@ MonoBehaviour:
     <WindingDrag>k__BackingField: 0.008
     <Drag>k__BackingField: 0.03
     <Damage>k__BackingField: 20
-    <Knockback>k__BackingField: 25
+    <Knockback>k__BackingField: 10
 --- !u!114 &5407610622297118115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1311187354}
   agent: {fileID: 0}
+  drag: 0.2
 --- !u!114 &1047190103321403214
 MonoBehaviour:
   m_ObjectHideFlags: 0

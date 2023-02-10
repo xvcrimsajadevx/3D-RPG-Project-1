@@ -8,7 +8,7 @@ public class EnemyImpactState : EnemyBaseState
 
     private float CrossFadeDuration = 0.1f;
 
-    private float duration = 1f;
+    private float duration = 0.8f;
 
     public EnemyImpactState(EnemyStateMachine stateMachine) : base(stateMachine) { }
 
@@ -20,7 +20,7 @@ public class EnemyImpactState : EnemyBaseState
     public override void Tick(float deltaTime)
     {
         Move(deltaTime);
-        
+
         duration -= deltaTime;
 
         if (duration <= 0)
