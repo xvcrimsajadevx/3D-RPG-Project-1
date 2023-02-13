@@ -9,19 +9,20 @@ public class PlayerTargetingState : PlayerBaseState
     private readonly int TargetingForwardHash = Animator.StringToHash("TargetingForward");
     private readonly int TargetingRightHash = Animator.StringToHash("TargetingRight");
 
+    private float CrossFadeDuration = 0.1f;
+
 
     // ==================== Constructor/Base Methods ====================
-    public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine)
-    {
-    }
+    public PlayerTargetingState(PlayerStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
         
         stateMachine.InputReader.TargetEvent += OnTargetPressed;
         stateMachine.InputReader.AttackEvent += OnAttack;
+        stateMachine.InputReader.DodgeEvent += OnDodge;
 
-        stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, 0.1f);
+        stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)
@@ -51,6 +52,7 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.InputReader.TargetEvent -= OnTargetPressed;
         stateMachine.InputReader.AttackEvent -= OnAttack;
+        stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
 
 
@@ -92,10 +94,19 @@ public class PlayerTargetingState : PlayerBaseState
     {
         stateMachine.Targeter.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+        return;
     }
 
     private void OnAttack()
     {
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+        return;
+    }
+
+    private void OnDodge()
+    {
+        if (Time.time - stateMachine.PreviousDodgeTime < stateMachine.DodgeCoolDown) { return; }
+        stateMachine.SwitchState(new PlayerDodgingState(stateMachine));
+        return;
     }
 }
