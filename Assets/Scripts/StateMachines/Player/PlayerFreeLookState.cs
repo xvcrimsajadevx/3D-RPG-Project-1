@@ -56,10 +56,12 @@ public class PlayerFreeLookState : PlayerBaseState
     {
         if (!stateMachine.Targeter.SelectTarget()) { return; }
         stateMachine.SwitchState(new PlayerTargetingState(stateMachine));
+        return;
     }
 
     private void OnAttack()
     {
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
+        return;
     }
 }
