@@ -56,4 +56,9 @@ public class ForceReceiver : MonoBehaviour
         impact += force;
         forceDrag = dragValue;
     }
+
+    public void Jump(float jumpForce)
+    {
+        verticalVelocity += jumpForce;
+    }
 }
