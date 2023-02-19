@@ -95,26 +95,24 @@ public class PlayerTargetingState : PlayerBaseState
     private void OnTargetPressed()
     {
         stateMachine.Targeter.Cancel();
+
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-        return;
     }
 
     private void OnAttack()
     {
         stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
-        return;
     }
 
     private void OnDodge()
     {
-        if (Time.time - stateMachine.PreviousDodgeTime < stateMachine.DodgeCoolDown) { return; }
-        stateMachine.SwitchState(new PlayerDodgingState(stateMachine));
-        return;
+        if (stateMachine.InputReader.MovementValue == Vector2.zero) { return; }
+
+        stateMachine.SwitchState(new PlayerDodgingState(stateMachine, stateMachine.InputReader.MovementValue));
     }
 
     private void OnJump()
     {
         stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
-        return;
     }
 }
