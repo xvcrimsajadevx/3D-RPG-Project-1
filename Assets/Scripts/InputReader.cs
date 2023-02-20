@@ -14,6 +14,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action TargetEvent;
     public event Action AttackEvent;
     public event Action DropEvent;
+    public event Action PullUpEvent;
 
     private Controls controls;
 
@@ -82,5 +83,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     {
         if (!context.performed) { return; }
         DropEvent?.Invoke();
+    }
+
+    public void OnPullUp(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+        PullUpEvent?.Invoke();
     }
 }

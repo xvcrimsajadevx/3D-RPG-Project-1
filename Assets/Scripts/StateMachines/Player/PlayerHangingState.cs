@@ -19,6 +19,7 @@ public class PlayerHangingState : PlayerBaseState
     public override void Enter()
     {
         stateMachine.InputReader.DropEvent += OnDrop;
+        stateMachine.InputReader.PullUpEvent += OnPullUp;
 
         stateMachine.transform.rotation = Quaternion.LookRotation(ledgeForward, Vector3.up);
 
@@ -32,6 +33,7 @@ public class PlayerHangingState : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.DropEvent -= OnDrop;
+        stateMachine.InputReader.PullUpEvent -= OnPullUp;
     }
 
     private void OnDrop()
@@ -39,6 +41,11 @@ public class PlayerHangingState : PlayerBaseState
         stateMachine.Controller.Move(Vector3.zero);
         stateMachine.ForceReceiver.Reset();
         stateMachine.SwitchState(new PlayerFallingState(stateMachine));
+    }
+
+    private void OnPullUp()
+    {
+        stateMachine.SwitchState(new PlayerPullUpState(stateMachine));
     }
 }
     
