@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
 {
+    private bool shouldFade;
+
     // ==================== String to Hash ====================
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
     private readonly int FreeLookBlendTreeHash = Animator.StringToHash("FreeLookBlendTree");
@@ -14,7 +16,10 @@ public class PlayerFreeLookState : PlayerBaseState
 
 
     // ==================== Constructor/Base Methods ====================
-    public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine) { }
+    public PlayerFreeLookState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine)
+    {
+        this.shouldFade = shouldFade;
+    }
 
     public override void Enter()
     {
@@ -22,7 +27,17 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.AttackEvent += OnAttack;
         stateMachine.InputReader.JumpEvent += OnJump;
 
-        stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0);
+
+        if (shouldFade)
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(FreeLookBlendTreeHash, 0.1f);
+        }
+        else
+        {
+            stateMachine.Animator.Play(FreeLookBlendTreeHash);
+        }
+        
     }
 
     public override void Tick(float deltaTime)
