@@ -13,6 +13,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action AttackEvent;
+    public event Action DropEvent;
 
     private Controls controls;
 
@@ -75,5 +76,11 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
             IsBlocking = false;
         }
 
+    }
+
+    public void OnDrop(InputAction.CallbackContext context)
+    {
+        if (!context.performed) { return; }
+        DropEvent?.Invoke();
     }
 }
