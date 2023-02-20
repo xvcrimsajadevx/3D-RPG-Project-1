@@ -18,7 +18,7 @@ public class PlayerTargetingState : PlayerBaseState
     public override void Enter()
     {
         
-        stateMachine.InputReader.TargetEvent += OnTargetPressed;
+        stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.AttackEvent += OnAttack;
         stateMachine.InputReader.DodgeEvent += OnDodge;
         stateMachine.InputReader.JumpEvent += OnJump;
@@ -51,7 +51,7 @@ public class PlayerTargetingState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.InputReader.TargetEvent -= OnTargetPressed;
+        stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.AttackEvent -= OnAttack;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
         stateMachine.InputReader.JumpEvent -= OnJump;
@@ -92,7 +92,7 @@ public class PlayerTargetingState : PlayerBaseState
 
 
     // ==================== Switch State Methods ====================
-    private void OnTargetPressed()
+    private void OnTarget()
     {
         stateMachine.Targeter.Cancel();
 
